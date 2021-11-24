@@ -12,4 +12,4 @@ procObj = subprocess.run(['ls', '-la'], stdout=subprocess.PIPE)
 outputStr = procObj.stdout.decode(locale.getdefaultlocale()[1])
 print(outputStr)
 # another way of doing the same thing as above 3 lines
-subprocess.run(['ls', '-la'])
+subprocess.run(['ls', '-la']) # multiple arguments must be in a list within the parens

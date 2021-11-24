@@ -1,0 +1,9 @@
+Balance is 0
+Deposit 120
+Balance is 120
+Withdraw 40
+Balance is 80
+Withdraw 1000
+Balance is 9999999000
+Withdraw 1000
+Balance is 9999998000
