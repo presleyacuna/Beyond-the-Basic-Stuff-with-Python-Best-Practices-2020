@@ -108,6 +108,7 @@ class MiniBoard(TTTBoard):  # overrides getBoardStr() method from parent class T
 class HintBoard(TTTBoard): # example of using super() function
     def getBoardStr(self):
         """Return a text-representation of the board with hints."""
+        # Note that we are using the super() function here to grab code from the parent class
         boardStr = super().getBoardStr() # Call getBoardStr() from TTTBoard() class
 
         xCanWin = False
