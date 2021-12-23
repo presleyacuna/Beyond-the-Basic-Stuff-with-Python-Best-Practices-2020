@@ -296,6 +296,7 @@ class Wizcoin:
         self.galleons = galleons
         self.sickles = sickles
         self.knuts = knuts
+        # NOTE: __init__() methods NEVER have a return statement
 
     def value(self):
         """The value (in knuts) of all the coins in thie WizCoin object."""
@@ -383,11 +384,49 @@ class MiniBoard(TTTBoard):  # overrides getBoardStr() method from parent class T
 
 TTT Board() has a different text representation of the TicTacToe board - bigger.
 
+USE OF isinstance() and issubclass() FUNCTIONS
+The isinstance() and issubclass() functiona return type and inheritance information
+about the object passed to them.
+
+>>> class ParentClass:
+... pass
+...
+>>> class ChildClass(ParentClass):
+... pass
+...
+>>> parent = ParentClass() # Create a ParentClass object.
+>>> child = ChildClass() # Create a ChildClass object.
+>>> isinstance(parent, ParentClass)
+True
+>>> isinstance(parent, ChildClass)
+False
+>>> isinstance(child, ChildClass)
+True
+>>> isinstance(child, ParentClass)
+True
+
+The less commonly used issubclass() built-in function can identify
+whether the class object passed for the first argument is a subclass of (or
+the same class as) the class object passed for the second argument:
+>>> issubclass(ChildClass, ParentClass) # ChildClass subclasses ParentClass.
+True
+>>> issubclass(ChildClass, str) # ChildClass doesn't subclass str.
+False
+>>> issubclass(ChildClass, ChildClass) # ChildClass is ChildClass.
+True
+
 USE OF super() FUNCTION
 super() function can be used inside a overriding sub-class to execute the parent class'
 method instead of having to retype it, if most of the code is going to be the same.
 For example, if your overriding sub-class is going to just append code to the parent
 method, use super().parentmethod() where parentmethod is the name of the
 parent class' method, then append the new code after this line.
+
+OVEERIDE vs OVERLOAD
+
+Method overriding is used to change the behavior of existing methods.  Requires a
+parent class and a child class that does the overriding.
+Method overloading is used to add more to the behavior of methods.  The overriding
+happens in the same parent class.
 
 '''
